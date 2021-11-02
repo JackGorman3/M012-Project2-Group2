@@ -10,10 +10,12 @@ def exploreOnly():
     for i in range(100):
         a = random.normalvariate(9,3)
         C1.append(a)
+    #creates list with 100 values(visit happiness) for C1
     C1sum = 0
     for num in C1:
         C1sum = C1sum + num
     C1happy = C1sum / 100
+    #finds the sum of created list and defines as C1happy
 
     C2 = []
     for i in range(100):
