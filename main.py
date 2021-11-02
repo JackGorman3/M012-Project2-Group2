@@ -10,12 +10,10 @@ def exploreOnly():
     for i in range(100):
         a = random.normalvariate(9,3)
         C1.append(a)
-    #creates list with 100 values(visit happiness) for C1
     C1sum = 0
     for num in C1:
         C1sum = C1sum + num
-    C1happy = C1sum / 100
-    #finds the sum of created list and defines as C1happy
+    C1happy = C1sum
 
     C2 = []
     for i in range(100):
@@ -24,7 +22,7 @@ def exploreOnly():
     C2sum = 0
     for num in C2:
         C2sum = C2sum + num
-    C2happy = C2sum / 100
+    C2happy = C2sum
 
     C3 = []
     for i in range(100):
@@ -33,11 +31,12 @@ def exploreOnly():
     C3sum = 0
     for num in C3:
         C3sum = C3sum + num
-    C3happy = C3sum / 100
+    C3happy = C3sum
     #100 days on each cafeteria
+    totalHappy = C1happy + C2happy + C3happy
 
     print("FOR EXPLORE ONLY\nCafeteria 1 Happiness = " + str(C1happy) + "\nCafeteria 2 Happiness = " + str(C2happy) + "\nCafeteria 3 Happiness = " + str(C3happy))
-    #the print is for reference, when function is run it will show average values for each cafeteria
+    print("Total Happiness = " + str(totalHappy))
     pass
 
 def eGreedy(e):
