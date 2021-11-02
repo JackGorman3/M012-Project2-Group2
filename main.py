@@ -37,6 +37,7 @@ def exploreOnly():
     #100 days on each cafeteria
 
     print("FOR EXPLORE ONLY\nCafeteria 1 Happiness = " + str(C1happy) + "\nCafeteria 2 Happiness = " + str(C2happy) + "\nCafeteria 3 Happiness = " + str(C3happy))
+    #the print is for reference, when function is run it will show average values for each cafeteria
     pass
 
 def eGreedy(e):
