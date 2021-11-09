@@ -2,14 +2,14 @@ import random
 
 def eGreedy(e: int) -> int:
     totHap = 0
-    per = e // 100 # e as a percentage
-    c1Hap = random.normalvariate(9, 3) # first visit to caf 1
-    hap1 = c1Hap # hap(1-3) is the variable that tracks the total hap for respective caf
-    c2Hap = random.normalvariate(7, 5) # first visit to caf 2
+    per = e // 100  # e as a percentage
+    c1Hap = random.normalvariate(9, 3)  # first visit to caf 1
+    hap1 = c1Hap  # hap(1-3) is the variable that tracks the total hap for respective caf
+    c2Hap = random.normalvariate(7, 5)  # first visit to caf 2
     hap2 = c2Hap
-    c3Hap = random.normalvariate(11, 7) # first visit to caf 3
+    c3Hap = random.normalvariate(11, 7)  # first visit to caf 3
     hap3 = c3Hap
-    if c1Hap > c2Hap and c1Hap > c3Hap: # next three if/elif/else statments establish the best caf after first three days
+    if c1Hap > c2Hap and c1Hap > c3Hap:  # next three if/elif/else statments establish the best caf after first three days
         best = c1Hap
         bestCaf = "c1"
     elif c2Hap > c1Hap and c2Hap > c3Hap:
@@ -19,16 +19,16 @@ def eGreedy(e: int) -> int:
         best = c3Hap
         bestCaf = "c3"
     totHap = totHap + best
-    
-    count1 = 0
-    count2 = 0
-    count3 = 0
+
+    count1 = 1
+    count2 = 1
+    count3 = 1
     for i in range(297):
         r = random.random()  # generates the random number between 0-1
-        if r < per:                     # this if statement is for when you are picking a random caf
+        if r < per:  # this if statement is for when you are picking a random caf
             caf = random.randint(1, 3)
             if caf == 1:
-                c1Hap = random.normalvariate(9,3)
+                c1Hap = random.normalvariate(9, 3)
                 totHap = totHap + c1Hap
                 hap1 = hap1 + c1Hap
                 count1 += 1
@@ -42,7 +42,7 @@ def eGreedy(e: int) -> int:
                 totHap = totHap + c3Hap
                 hap3 = hap3 + c3Hap
                 count3 += 1
-        else:                               # this else is running the best caf when r > per (e%)
+        else:  # this else is running the best caf when r > per (e%)
             if bestCaf == "c1":
                 c1Hap = random.normalvariate(9, 3)
                 totHap = totHap + c1Hap
@@ -58,11 +58,11 @@ def eGreedy(e: int) -> int:
                 totHap = totHap + c3Hap
                 hap3 += c3Hap
                 count3 += 1
-        if (hap1/count1) > (hap2/count2) and (hap1/count1) > (hap3/count3):        # next three if statements resets what the best caf is after each run of the for loop
+        if (hap1 / count1) > (hap2 / count2) and (hap1 / count1) > (hap3 / count3):  # next three if statements resets what the best caf is after each run of the for loop
             bestCaf = "c1"
-        elif (hap2/count2) > (hap1/count1) and (hap2/count2) > (hap3/count3):
+        elif (hap2 / count2) > (hap1 / count1) and (hap2 / count2) > (hap3 / count3):
             bestCaf = "c2"
-        elif (hap3/count3) > (hap2/count2) and (hap3/count3) > (hap1/count1):
+        elif (hap3 / count3) > (hap2 / count2) and (hap3 / count3) > (hap1 / count1):
             bestCaf = "c3"
     return totHap
 
