@@ -176,4 +176,4 @@ def simulation(t, e):
     print("Expected Happiness: ", expectedEGreedyHap, "Expected Regret: ", expectedEGreedyRegret)
     print("Average Happiness: ", eGreedyH, "Average Regret: ", eGreedyR)
 
-simulation(10, 12)
+simulation(100, 12)
