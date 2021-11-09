@@ -77,9 +77,9 @@ def exploitOnly():
     maxH = 0
     if c1 > maxH:  # 17-22 generating which has the highest happiness level.
         max = "c1"
-    if c2 > maxH:
+    elif c2 > maxH:
         max = "c2"
-    if c3 > maxH:
+    elif c3 > maxH:
         max = "c3"
     for i in range(297):  # loop will run for the next 297 days since we already wenrt to each cafitrea first three days
         if max == "c1":
