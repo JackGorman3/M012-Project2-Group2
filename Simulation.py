@@ -85,19 +85,19 @@ def exploitOnly():
     tothap = tothap + c3
     maxH = 0
     if c1 > maxH:  # 17-22 generating which has the highest happiness level.
-        max = "c1"
+        maxH = "c1"
     elif c2 > maxH:
-        max = "c2"
+        maxH = "c2"
     elif c3 > maxH:
-        max = "c3"
+        maxH = "c3"
     for i in range(297):  # loop will run for the next 297 days since we already wenrt to each cafitrea first three days
-        if max == "c1":
+        if maxH == "c1":
             c1hap = random.normalvariate(h1, s1)  # c1happ is the happines for the first caffieteria
             tothap = tothap + c1hap
-        elif max == "c2":
+        elif maxH == "c2":
             c2hap = random.normalvariate(h2, s2)  # c2happ is the happiness for c2
             tothap = tothap + c2hap
-        elif max == "c3":
+        elif maxH == "c3":
             c3hap = random.normalvariate(h3, s3)  # c3happ is the happiness for the 3rd caffiteria
             tothap = tothap + c3hap
     return tothap
